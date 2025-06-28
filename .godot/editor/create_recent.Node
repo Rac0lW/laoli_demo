@@ -1,0 +1,10 @@
+CollisionShape2D
+RigidBody2D
+RichTextLabel
+Node
+VBoxContainer
+Button
+HBoxContainer
+Control
+SubViewport
+Character

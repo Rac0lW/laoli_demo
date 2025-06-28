@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://qgswqllq6yy4"]
+
+[ext_resource type="Script" uid="uid://dq7cvh358ayll" path="res://Scripts/battle_scene.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bjwoinc6f0260" path="res://Characters/character.tscn" id="2_h2yge"]
+[ext_resource type="Resource" uid="uid://bf24hc4eg5db1" path="res://Resources/character_data/player.tres" id="4_1bvp3"]
+[ext_resource type="Resource" uid="uid://c1pd2rf2tkv5r" path="res://Resources/character_data/slime.tres" id="4_lquwl"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_h2yge")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 512.0
+offset_top = 512.0
+offset_right = 640.0
+offset_bottom = 616.0
+
+[node name="AttackButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Attack"
+
+[node name="DefendButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Defend
+"
+
+[node name="Characters" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Hero" parent="Characters" instance=ExtResource("2_h2yge")]
+position = Vector2(192, 448)
+cd = ExtResource("4_1bvp3")
+
+[node name="Slime" parent="Characters" instance=ExtResource("2_h2yge")]
+position = Vector2(896, 448)
+cd = ExtResource("4_lquwl")
