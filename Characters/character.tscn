@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjwoinc6f0260"]
+[gd_scene load_steps=5 format=3 uid="uid://bjwoinc6f0260"]
 
-[ext_resource type="Script" uid="uid://torr21yjrpbf" path="res://Scripts/character.gd" id="1_acr0g"]
+[ext_resource type="Script" uid="uid://torr21yjrpbf" path="res://Scripts/Character/character.gd" id="1_acr0g"]
 [ext_resource type="Texture2D" uid="uid://c1eigqv8587w7" path="res://icon.svg" id="2_ticvp"]
 [ext_resource type="Texture2D" uid="uid://yw6iygxaluji" path="res://Assets/shield.svg" id="3_3mn46"]
+[ext_resource type="Script" uid="uid://cbeshj3xm0jds" path="res://Scripts/Character/Labels/damage_taken_label.gd" id="4_dk5p5"]
 
 [node name="Character" type="Node2D"]
 script = ExtResource("1_acr0g")
@@ -32,10 +33,11 @@ texture = ExtResource("3_3mn46")
 
 [node name="DamageTakenLabel" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
-offset_top = -88.0
+offset_top = -64.0
 offset_right = 128.0
-offset_bottom = -40.0
+offset_bottom = -16.0
 bbcode_enabled = true
 text = "7"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_dk5p5")

@@ -27,10 +27,9 @@ size_flags_vertical = 3
 text = "Defend
 "
 
-[node name="EnemySides" type="Node" parent="."]
-unique_name_in_owner = true
+[node name="Node" type="Node" parent="."]
 
-[node name="Slime" parent="EnemySides" instance=ExtResource("2_h2yge")]
+[node name="Slime" parent="Node" instance=ExtResource("2_h2yge")]
 position = Vector2(832, 448)
 cd = ExtResource("3_lquwl")
 

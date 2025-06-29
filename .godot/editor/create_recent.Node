@@ -1,7 +1,8 @@
+Node
+BattleStateManager
 CollisionShape2D
 RigidBody2D
 RichTextLabel
-Node
 VBoxContainer
 Button
 HBoxContainer

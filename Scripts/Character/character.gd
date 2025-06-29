@@ -1,4 +1,3 @@
-
 extends Node2D
 class_name Character
 
@@ -24,7 +23,7 @@ var isDefending:bool = false:
 
 @onready var icon: Sprite2D = $Icon
 
-@onready var damage_taken_label: RichTextLabel = $DamageTakenLabel
+@onready var damage_taken_label: AnimatedDamageTakenLabel = $DamageTakenLabel
 
 
 func _show_shield() -> void:
@@ -72,11 +71,9 @@ func _get_hurt(v: int) -> void:
 			print_rich("[color=Green][%s][/color] has dead" % name)
 			_die()
 
-func _get_hurt_animation(v: int = 0.0) -> void:
+func _get_hurt_animation(v: int = 0) -> void:
 	damage_taken_label.text = "[color=red] %s" % str(v)
-	
-	damage_taken_label.visible = true
-	
+	damage_taken_label._bounce_once()
 	var tween = get_tree().create_tween()
 	tween.set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property(icon, "scale", Vector2(1.1, 1.1), 0.1)

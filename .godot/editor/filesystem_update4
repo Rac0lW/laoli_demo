@@ -2,6 +2,6 @@ res://main.tscn
 res://Resources/character_data/player.tres
 res://Resources/character_data/slime.tres
 res://Tests/test.gd
-res://Scripts/character.gd
 res://Characters/character.tscn
-res://Scripts/battle_scene.gd
+res://Scripts/Battle/BattleManager.gd
+res://Scripts/Battle/BattleStateManager.gd
