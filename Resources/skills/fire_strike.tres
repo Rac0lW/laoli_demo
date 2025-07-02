@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3 uid="uid://dlei01dg0600a"]
+
+[ext_resource type="Script" uid="uid://bqt4sk67qymqn" path="res://Scripts/Resource/skill_data.gd" id="1_hjsoo"]
+
+[resource]
+script = ExtResource("1_hjsoo")
+skill_name = "Fire Strike"
+skill_id = "fire_strike"
+description = "Attack a single enemy with flame fire."
+target_type = 4
+skill_type = 1
+power = 20
+mp_cost = 10
+metadata/_custom_type_script = "uid://bqt4sk67qymqn"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillData" load_steps=2 format=3 uid="uid://bq328kf4e1365"]
+
+[ext_resource type="Script" uid="uid://bqt4sk67qymqn" path="res://Scripts/Resource/skill_data.gd" id="1_ge0gu"]
+
+[resource]
+script = ExtResource("1_ge0gu")
+skill_name = "Heal"
+skill_id = "heal"
+description = "Heal yourself or your ally for once."
+target_type = 2
+skill_type = 0
+power = 20
+mp_cost = 10
+metadata/_custom_type_script = "uid://bqt4sk67qymqn"

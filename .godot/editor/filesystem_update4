@@ -2,6 +2,7 @@ res://main.tscn
 res://Resources/character_data/player.tres
 res://Resources/character_data/slime.tres
 res://Tests/test.gd
-res://Characters/character.tscn
-res://Scripts/Battle/BattleManager.gd
-res://Scripts/Battle/BattleStateManager.gd
+res://Scripts/Resource/skill_data.gd
+res://Scripts/Character/character_data.gd
+res://Resources/skills/fire_strike.tres
+res://Resources/skills/heal.tres

@@ -15,3 +15,6 @@ enum CHARACTER_TYPE{
 @export var speed:int = 10
 @export var attack:int = 20
 @export var character_type:CHARACTER_TYPE = CHARACTER_TYPE.OTHER
+
+@export_group("Skills")
+@export var skills:Array[SkillData]
