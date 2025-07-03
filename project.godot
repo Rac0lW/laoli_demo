@@ -22,8 +22,14 @@ folder_colors={
 "res://Characters/": "orange",
 "res://Resources/": "yellow",
 "res://Scripts/": "blue",
-"res://Tests/": "gray"
+"res://Tests/": "gray",
+"res://UI/": "green"
 }
+
+[global_group]
+
+Player=""
+EnemySides=""
 
 [rendering]
 

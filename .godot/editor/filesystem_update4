@@ -1,8 +1,9 @@
 res://main.tscn
+res://Resources/skills/fire_strike.tres
+res://Resources/skills/heal.tres
 res://Resources/character_data/player.tres
 res://Resources/character_data/slime.tres
 res://Tests/test.gd
-res://Scripts/Resource/skill_data.gd
-res://Scripts/Character/character_data.gd
-res://Resources/skills/fire_strike.tres
-res://Resources/skills/heal.tres
+res://Characters/character.tscn
+res://UI/skill_selection_panel.tscn
+res://Scripts/UI/skill_selection_panel.gd

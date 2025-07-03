@@ -1,12 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://qgswqllq6yy4"]
+[gd_scene load_steps=7 format=3 uid="uid://qgswqllq6yy4"]
 
 [ext_resource type="Resource" uid="uid://bf24hc4eg5db1" path="res://Resources/character_data/player.tres" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bjwoinc6f0260" path="res://Characters/character.tscn" id="2_h2yge"]
 [ext_resource type="Resource" uid="uid://c1pd2rf2tkv5r" path="res://Resources/character_data/slime.tres" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://c356u58p0njda" path="res://Scripts/Battle/BattleStateManager.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://b534dbp3koev3" path="res://Scripts/Battle/BattleManager.gd" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://blv70ewr4df42" path="res://UI/skill_selection_panel.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node2D"]
+
+[node name="BattleUI" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="SkillSelectionPanel" parent="BattleUI" instance=ExtResource("6_7mycd")]
+offset_left = 128.0
+offset_top = 104.0
+offset_right = -768.0
+offset_bottom = -288.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 512.0
@@ -27,7 +37,7 @@ size_flags_vertical = 3
 text = "Defend
 "
 
-[node name="EnemySides" type="Node" parent="."]
+[node name="EnemySides" type="Node" parent="." groups=["EnemySides"]]
 unique_name_in_owner = true
 
 [node name="Slime" parent="EnemySides" instance=ExtResource("2_h2yge")]
@@ -37,7 +47,7 @@ cd = ExtResource("3_lquwl")
 [node name="PlayerSides" type="Node" parent="."]
 unique_name_in_owner = true
 
-[node name="Player" parent="PlayerSides" instance=ExtResource("2_h2yge")]
+[node name="Player" parent="PlayerSides" groups=["Player"] instance=ExtResource("2_h2yge")]
 position = Vector2(192, 448)
 cd = ExtResource("2_1bvp3")
 

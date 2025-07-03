@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="CharacterData" load_steps=2 format=3 uid="uid://c1pd2rf2tkv5r"]
+[gd_resource type="Resource" script_class="CharacterData" load_steps=3 format=3 uid="uid://c1pd2rf2tkv5r"]
 
 [ext_resource type="Script" uid="uid://bmbck45yvcbea" path="res://Scripts/Character/character_data.gd" id="1_e84gk"]
+[ext_resource type="Script" uid="uid://bqt4sk67qymqn" path="res://Scripts/Resource/skill_data.gd" id="2_xqwro"]
 
 [resource]
 script = ExtResource("1_e84gk")
@@ -9,4 +10,5 @@ health = 50
 speed = 5
 attack = 20
 character_type = 1
+skills = Array[ExtResource("2_xqwro")]([])
 metadata/_custom_type_script = "uid://bmbck45yvcbea"
