@@ -24,10 +24,14 @@ func _ready() -> void:
 		)
 	
 func load_targets() -> void:
+	#TODO:支持更多类型的目标
 	var targets = get_tree().get_first_node_in_group("EnemySides").get_children()
+	
+	#Core
 	for i:Character in targets:
 		current_targets.append(i)
 	
+	#Interactive
 	for i:Character in current_targets:
 		item_list.add_item("%s" % i.name)
 
