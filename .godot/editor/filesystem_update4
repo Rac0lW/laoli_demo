@@ -7,3 +7,5 @@ res://Tests/test.gd
 res://Characters/character.tscn
 res://UI/skill_selection_panel.tscn
 res://Scripts/UI/skill_selection_panel.gd
+res://UI/target_selection_panel.tscn
+res://Scripts/target_selection_panel.gd

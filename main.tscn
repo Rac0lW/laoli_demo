@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://qgswqllq6yy4"]
+[gd_scene load_steps=8 format=3 uid="uid://qgswqllq6yy4"]
 
 [ext_resource type="Resource" uid="uid://bf24hc4eg5db1" path="res://Resources/character_data/player.tres" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bwvanrepu77jf" path="res://UI/target_selection_panel.tscn" id="2_272bh"]
 [ext_resource type="PackedScene" uid="uid://bjwoinc6f0260" path="res://Characters/character.tscn" id="2_h2yge"]
 [ext_resource type="Resource" uid="uid://c1pd2rf2tkv5r" path="res://Resources/character_data/slime.tres" id="3_lquwl"]
 [ext_resource type="Script" uid="uid://c356u58p0njda" path="res://Scripts/Battle/BattleStateManager.gd" id="5_7mycd"]
@@ -16,6 +17,12 @@ layer = 128
 offset_left = 128.0
 offset_top = 104.0
 offset_right = -768.0
+offset_bottom = -288.0
+
+[node name="TargetSelectionPanel" parent="BattleUI" instance=ExtResource("2_272bh")]
+offset_left = 416.0
+offset_top = 104.0
+offset_right = -480.0
 offset_bottom = -288.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="."]
