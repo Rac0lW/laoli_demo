@@ -3,6 +3,7 @@ class_name BattleManager
 
 @onready var attack_button: Button = %AttackButton
 @onready var defend_button: Button = %DefendButton
+@onready var skill_button: Button = %SkillButton
 
 
 @onready var enemy_sides: Node = %EnemySides
@@ -31,24 +32,36 @@ func _ready() -> void:
 	_execute()
 	attack_button.pressed.connect(_attack)
 	defend_button.pressed.connect(_defend)
+	skill_button.pressed.connect(func():
+		if skill_selection_panel.visible:
+			skill_selection_panel.visible = false
+		else:
+			skill_selection_panel.visible = true
+		)
+	
 	skill_selection_panel.skill_selected.connect(func(sd):
 		current_skill = sd
+		target_selection_panel.visible = true
 		)
 	
 	target_selection_panel.target_selected.connect(func(t):
 		current_targets.append(t)
 		_skill_execute()
+		skill_selection_panel.visible = false
+		target_selection_panel.visible = false
 		)
 	
 func _disable_buttons() -> void:
 	print("Button Deactived")
 	attack_button.disabled = true
 	defend_button.disabled = true
+	skill_button.disabled = true
 
 func _active_buttons() -> void:
 	print("Button Actived")
 	attack_button.disabled = false
 	defend_button.disabled = false
+	skill_button.disabled = false
 
 
 func _execute() -> void:

@@ -17,6 +17,7 @@ func _ready() -> void:
 	cancel_button.pressed.connect(func():
 		current_index_of_target = -1
 		item_list.deselect_all()
+		visible = false
 		)
 	
 	select_button.pressed.connect(func():

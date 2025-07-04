@@ -27,6 +27,7 @@ func _ready() -> void:
 		skill_list.deselect_all()
 		description.text = "Plz select a skill."
 		current_index_of_skill = -1
+		visible = false
 		)
 	
 func load_some_skills_from_player() -> void:

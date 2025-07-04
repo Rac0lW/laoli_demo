@@ -1,5 +1,6 @@
-HBoxContainer
 Button
+Panel
+HBoxContainer
 ItemList
 Label
 VBoxContainer
@@ -11,4 +12,3 @@ RichTextLabel
 SubViewport
 Node
 BattleStateManager
-CollisionShape2D
