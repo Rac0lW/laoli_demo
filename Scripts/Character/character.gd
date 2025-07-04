@@ -70,6 +70,18 @@ func _get_hurt(v: int) -> void:
 			isAlive = false
 			print_rich("[color=Green][%s][/color] has dead" % name)
 			_die()
+			
+func _get_heal(v:int ) -> void:
+	if isAlive:
+		cd.health += v
+		_update()
+		print("{name} get healed by {v}".format(
+			{
+				"name": cd.display_name,
+				"v": v
+			}
+		))
+		
 
 func _get_hurt_animation(v: int = 0) -> void:
 	damage_taken_label.text = "[color=red] %s" % str(v)

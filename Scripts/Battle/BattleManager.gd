@@ -12,6 +12,9 @@ class_name BattleManager
 @onready var hero: Character = $"../PlayerSides/Hero"
 @onready var slime: Character = $"../EnemySides/Slime"
 
+@onready var skill_selection_panel: SkillSelectionPanel = %SkillSelectionPanel
+@onready var target_selection_panel: TargetSelectionPanel = %TargetSelectionPanel
+
 
 
 @onready var battle_state_manager: BattleStateManager = $BattleStateManager
@@ -21,10 +24,21 @@ signal strategy_made
 var current_character: Character
 var turn_list:Array[Character] = []
 
+var current_skill: SkillData
+var current_targets: Array[Character] = []
+
 func _ready() -> void:
 	_execute()
 	attack_button.pressed.connect(_attack)
 	defend_button.pressed.connect(_defend)
+	skill_selection_panel.skill_selected.connect(func(sd):
+		current_skill = sd
+		)
+	
+	target_selection_panel.target_selected.connect(func(t):
+		current_targets.append(t)
+		_skill_execute()
+		)
 	
 func _disable_buttons() -> void:
 	print("Button Deactived")
@@ -107,5 +121,35 @@ func _defend() -> void:
 	print_rich("%s defend by using the Shield." % [hero.name])
 	hero.isDefending = true
 	strategy_made.emit()
+	
+func _skill_execute() -> void:
+	var value:int = 0
+	
+	if !current_skill:
+		print("[Debug]Skill didn't being seleted.")
+		return
+		
+	if current_targets.is_empty():
+		print("[Debug]Target didn't being seleted.")
+		return
+	
+	match current_skill.skill_type:
+		SkillData.SKILL_TYPE.HEAL:
+			value = current_skill.power
+			for i:Character in current_targets:
+				i._get_heal(value)
+		SkillData.SKILL_TYPE.ATTACK:
+			value = -current_skill.power
+			for i:Character in current_targets:
+				i._get_hurt(value)
+
+		_:
+			printerr("Unexpected SKILL_TYPE. %s %s" % [current_skill.skill_type, current_skill.SKILL_TYPE])
+			
+	
+	strategy_made.emit()
+	
+	current_targets.clear()
+	current_skill = null
 	
 	
