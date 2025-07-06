@@ -6,10 +6,12 @@ class_name TargetSelectionPanel
 @onready var cancel_button: Button = %CancelButton
 
 var current_targets:Array[Character] = []
+@onready var skill_selection_panel: SkillSelectionPanel = %SkillSelectionPanel
 
 var current_index_of_target:int = -1
 
 signal target_selected(t: Character)
+signal target_canceled
 
 func _ready() -> void:
 	load_targets()
@@ -22,6 +24,10 @@ func _ready() -> void:
 	
 	select_button.pressed.connect(func():
 		target_selected.emit(current_targets[current_index_of_target])
+		)
+		
+	skill_selection_panel.skill_canceled.connect(func():
+		self.visible = false
 		)
 	
 func load_targets() -> void:

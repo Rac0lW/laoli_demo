@@ -8,6 +8,7 @@ class_name SkillSelectionPanel
 
 
 signal skill_selected(skill_data: SkillData)
+signal skill_canceled
 
 var current_skills:Array[SkillData] = []
 var current_index_of_skill:int = -1
@@ -28,6 +29,7 @@ func _ready() -> void:
 		description.text = "Plz select a skill."
 		current_index_of_skill = -1
 		visible = false
+		skill_canceled.emit()
 		)
 	
 func load_some_skills_from_player() -> void:
